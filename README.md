@@ -5,15 +5,15 @@ In this model, VDB can be defined in exploded format, as in, a single DDL file d
 
 When build runs, it will also resolve any `vdb-import` statements in the main VDB, and pull in the contents for the imported vdbs from additional vdb files that are defined in the `src/main/vdb` folder like for example `/src/main/vdb/import/foo-vdb.ddl` where the `foo` vdb is imported in your main VDB. Alternatively, you can define a maven dependency like
 
-[source,xml]
-----
+
+```
 <dependency>
     <groupId>com.example</groupId>
     <artifactId>customer-vdb</artifactId>
     <version>${project.version}</version>
     <type>vdb</type>
 </dependency>
-----
+```
 
 in the `pom.xml` file as dependency, and the plugin will find the file and resolve the contents appropriately.
 
@@ -23,16 +23,14 @@ All above is to build a VDB that can be used else where with Operator for deploy
 
 To Build, simply run
 
-[source,bash]
-----
+```
 mvn clean install
-----
+```
 
 that should generate a `${project.name}-${version}.vdb` file in your target repository. If you want deploy this artifact to a remote repository then you need to call 
 
-[source,bash]
-----
+```
 mvn clean install deploy
-----
+```
 
 it is also expected that the user provides the respository locations and necessary user credentials in the pom.xml file before `deploy` is run.
