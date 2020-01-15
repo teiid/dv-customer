@@ -1,4 +1,4 @@
-# dv-customer
+# Example VDB as Maven Artifact (dv-customer)
 Example project to show to create a VDB as a maven artifact from a single or multiple DDL file(s)
 
 In this model, VDB can be defined in exploded format, as in, a single DDL file does not need to contain all the schema for every model, a separate DDL files can be defined. You can also include additional library files in "lib" directory. However, there *MUST* be one main vdb file called `vdb.ddl` in the `src/main/vdb` folder. This vdb folder can contain any number of sub-folders as needed to separate the code as needed. When the maven build is runs, it will scan through `src/main/vdb` folder and builds an artifact with name `${project.name}-${version}.vdb` file, and also places this artifact in the maven repository.
